@@ -1,0 +1,814 @@
+
+body {
+    margin: 0;
+}
+
+* {
+    font: 1em "bellotaregular", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ----Partie Nav ----*/
+
+.navbar
+{
+    background-color: #555;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    opacity: 0.9;
+    z-index: 10;
+}
+
+.navbar a
+{
+    padding: 20px;
+    color: rgb(218, 218, 218);
+    font-size: 25px;
+    cursor: pointer;
+    font-weight:bold;
+}
+
+a:link
+{
+    text-decoration:none;
+}
+
+.logo_navbar
+{
+    width: 70px;
+    height: 70px;
+}
+
+.links
+{
+    display: flex;
+    align-items: center;
+}
+
+.links :hover
+{
+    color: #000;
+    background-color: #D3D3D3;
+    text-decoration: none;
+}
+
+.burger, .close
+{
+    display: none;
+}
+
+.carousel
+{
+    background-color: var(mainColor);
+    background-image: radial-gradient(white 8%,transparent 70%),url(http://placeimg.com/1000/500/nature);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+}
+
+.carousel h1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 500px;
+    font-weight: bold;
+    font-style: italic;
+    color: #73be31;
+    font-size: 6em;
+    margin: 0;
+    text-shadow: 4px 0.4px 6px rgba(31, 35, 35, 0.25);
+}
+
+
+/* Mobile Styles */
+@media screen and (max-width: 360px) {
+    .logo_navbar
+    {
+        display: none;
+    }
+
+    a:link
+    {
+        text-decoration:none;
+    }
+
+    .carousel h1
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        font-weight: bold;
+        font-style: italic;
+        color: #73be31;
+        font-size: 4em;
+        margin: 0;
+        text-shadow: 4px 0.4px 6px rgba(31, 35, 35, 0.25);
+    }
+
+    .burger:hover
+    {
+        color: #000;
+        background-color: #D3D3D3;
+        text-decoration: none;
+    }
+
+    .burger, .close
+    {
+        display: block;
+    }
+
+    .close
+    {
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+
+    .links
+    {
+        display: none;
+    }
+
+    .links:target
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        background-color: #555;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0.9;
+        top: 0;
+        padding-top: 60px;
+    }
+}
+
+/*----Partie Actions et Associations----*/
+
+#actions{
+    margin:-80px;
+}
+
+.actions img, .assos img {
+    width: 300px;
+    height: 300px;
+    margin: 25px;
+    border-radius: 50%;
+    border: 10px solid whitesmoke;
+}
+
+.actions img:hover, .assos img:hover {
+    opacity: 0.9;
+    transition-duration: 200ms;
+    border: 10px solid #73be31;
+}
+
+.title-actions {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0px;
+    height: 130px;
+    text-align: center;
+    font-size: 4em;
+    background-color: white;
+    color: #73be31;
+}
+
+.actions {
+    background-image: url("https://i.postimg.cc/jdmfRLpK/jez-timms-l8xc8t-XJ8-E-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.actions h2 {
+    font-size: 1.6em;
+    text-align: center;
+    width: 250px;
+    background-color: #73be31;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    text-shadow: 4px 0.4px 6px rgba(31, 35, 35, 0.25);
+    margin-left: 50px;
+}
+
+hr {
+    display: none;
+}
+
+.success_ok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #73be31;
+    text-align: center;
+    color: white;
+    font-size: 1.6em;
+    height: 50px;
+    opacity: 0.8;
+}
+
+.delete_ok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    text-align: center;
+    color: white;
+    font-size: 1.6em;
+    height: 50px;
+    opacity: 0.8;
+}
+
+.ajout {
+    color: white;
+}
+
+.title-assos {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0px;
+    height: 130px;
+    text-align: center;
+    font-size: 4em;
+    background-color: white;
+    color: #73be31;
+}
+
+.assos {
+    background-image: url("https://i.postimg.cc/jdmfRLpK/jez-timms-l8xc8t-XJ8-E-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.assos h2 {
+    font-size: 1.6em;
+    text-align: center;
+    width: 250px;
+    background-color: #73be31;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    text-shadow: 4px 0.4px 6px rgba(31, 35, 35, 0.25);
+    margin-left: 50px;
+}
+
+@media (max-width: 360px) {
+
+    #actions{
+        margin:-80px;
+    }
+
+    .actions img, .assos img {
+        margin :0px;
+    }
+
+
+    .title-actions {
+        font-size: 2.2em;
+        height: 70px;
+        margin: 0px;
+        padding-top: 70px;
+    }
+
+    .title-assos {
+        font-size: 2.2em;
+        height: 70px;
+        margin: 0px;
+        padding-top: 40px;
+    }
+
+    .actions div {
+        margin: 30px 0px 30px 0px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .assos div {
+        margin: 30px 0px 30px 0px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .actions h2 {
+        margin-left: 0;
+    }
+
+    .assos h2 {
+        margin-left: 0;
+    }
+
+    .success_ok {
+        font-size: 20px;
+    }
+
+    .delete_ok {
+        font-size: 20px;
+    }
+
+}
+
+/*Partie gestion des déchets*/
+
+
+#dechets{
+    margin:-100px;
+}
+
+.titreconseils {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: #73be31;
+    font-size: 3em;
+    text-align: center;
+    margin: 0;
+}
+
+.titregestiondesdechets{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: #73be31;
+    font-size: 4em;
+    text-align: center;
+    padding-top: 50px;
+    margin: 0;
+
+}
+
+.containerconseil {
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-right: 20px;
+    background:
+            linear-gradient(rgba(5, 5, 5, 0.7),rgba(5, 5, 5, 0.7)),
+            url(https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80) no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+    font-size:25px;
+}
+
+.hovertext:hover {
+    font-size: 1.3em;
+
+}
+
+.soustitre {
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 30px;
+    color: white;
+}
+
+.paragrapheconseil {
+    color: white;
+
+}
+
+.conteneur{
+    background:
+            linear-gradient(rgba(88, 90, 94, 0),rgba(88, 90, 94, 0)),
+            url(https://images.unsplash.com/photo-1426170042593-200f250dfdaf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80) no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 60px;
+
+}
+
+.titrecollecte {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: #73be31;
+    font-size: 4em;
+    text-align: center;
+    margin: 0;
+    padding-top: 30px;
+}
+
+details {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+    width: 100%;
+    background-color: white;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+    background-color: #73be31;
+    text-shadow: 4px 0.4px 6px rgba(31, 35, 35, 0.295);
+    border-radius: 5px;
+    color: white;
+    font-size: 1.6em;
+}
+
+details[open] {
+    padding: .5em;
+    background-color: white;
+    color: #73be31;
+    text-shadow: 4px 0.4px 6px rgba(31, 35, 35, 0);
+    font-size: 1.2em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+    color: white;
+}
+
+.cotegauche{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+
+}
+
+.imagecentre {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: 20%;
+    margin-bottom: 50px;
+}
+
+.imgcentre{
+    width: 430px;
+    height: 400px;
+    border-radius: 50%;
+    border: 10px solid whitesmoke;
+}
+
+.imgcentre:hover{
+    opacity: 0.9;
+    transition-duration: 200ms;
+    border: 10px solid #73be31;
+}
+
+/*Gestion des déchets, partie mobile CSS*/
+
+@media only screen and (max-width: 360px){
+    .titregestiondesdechets {
+        font-size: 3em;
+    }
+
+    .conteneur {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .cotegauche {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+        width: 80%;
+    }
+
+    summary {
+        font-weight: bold;
+        margin: -.5em -.5em 0;
+        padding: .5em;
+        background-color: #73be31;
+        text-shadow: 4px 0.4px 6px rgba(31, 35, 35, 0.295);
+        border-radius: 5px;
+        color: white;
+        font-size: 1.2em;
+    }
+
+    .titregestiondesdechets{
+        font-size: 2.2em;
+    }
+
+    .titreconseils {
+        font-size: 1.8em;
+    }
+
+    .titrecollecte {
+        font-size: 2.2em;
+    }
+    .imgcentre {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/*Footer - Lionel*/
+
+#contact{
+    margin:-80px;
+}
+
+.contact{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-transform:uppercase;
+    text-align: center;
+    font-size: 4em;
+    color: #73be31;
+    text-shadow: 4px 0.4px 6px rgba(31, 35, 35, 0.25);
+    margin-top: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+
+}
+
+form div + div {
+    margin-top: 1em;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+
+input, textarea {
+    width: 800px;
+    height: 25px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+input:focus, textarea:focus {
+    border-color: #000;
+}
+
+textarea {
+    vertical-align: top;
+    height: 15em;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius:5px;
+    margin-bottom: 100px;
+
+}
+
+.error
+{
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
+.titre_formulaire{
+    font-size:18px;
+}
+
+footer{
+    background-color: #555;
+    color: #bbb;
+    line-height:1.5;
+    width:100%;
+    height:35%;
+}
+
+footer a{
+    text-decoration: none;
+    color: #eee;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+.partie_footer{
+    display:flex;
+    justify-content:space-around;
+    padding-bottom:20px;
+    border-bottom:2px gray solid;
+}
+
+.texte_debut{
+    display:flex;
+    flex-flow:column;
+}
+
+.texte_debut a{
+    padding-top:3px;
+    font-size:20px;
+    text-decoration:none;
+}
+
+.texte_milieu{
+    display:flex;
+    flex-flow:column;
+}
+
+.texte_milieu a{
+    padding-top:3px;
+    font-size:20px;
+    text-decoration:none;
+}
+
+
+.texte_fin{
+    display:flex;
+    flex-flow:column;
+}
+
+.texte_fin a{
+    padding-top:3px;
+    font-size:20px;
+    text-decoration:none;
+}
+
+.footer2{
+    display:flex;
+    justify-content:center;
+    padding-top:1.25rem;
+}
+
+.footer2 a{
+    margin:1.5rem;
+}
+
+.footer3{
+    background-color:#333;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.footer3 a{
+    margin:0.125rem 0.625rem;
+    font-size:20px;
+    text-decoration:none;
+}
+
+
+.titre_formulaire{
+    text-align:center;
+    font-weight:bold;
+    font-size:20px;
+    color:white;
+    padding-right:80px;
+}
+
+.logo{
+    border-radius:50%;
+    height:60px;
+    padding-left:5px;
+}
+
+
+@media screen and (max-width:360px) {
+
+    .contact {
+        font-size: 2.2em;
+    }
+
+    form {
+        margin-right: 30px;
+    }
+
+    form div + div {
+        margin-top: 1em;
+    }
+
+    label {
+        display: flex;
+        justify-content: center;
+        width: 150px;
+        text-align: right;
+        font-size: 18px;
+        margin-left: 100px;
+    }
+
+    input, textarea {
+        width: 300px;
+        height: 25px;
+        box-sizing: border-box;
+        border: 1px solid #999;
+        border-radius: 5px;
+        margin-left: 30px;
+    }
+
+    input:focus, textarea:focus {
+        border-color: #000;
+    }
+
+    textarea {
+        vertical-align: top;
+        height: 15em;
+    }
+
+    .button{
+        text-align: center;
+        border-radius:5px;
+        margin-right: 0px;
+        margin-bottom: 100px;
+
+    }
+
+    .error
+    {
+        color: red;
+        display: flex;
+        justify-content: center;
+    }
+
+    footer {
+        height: 100%;
+    }
+
+    .partie_footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .texte_debut {
+        align-items: center;
+        border-bottom: 2px #777 solid;
+        padding-bottom: 20px;
+    }
+
+    .texte_milieu {
+        align-items: center;
+        border-bottom: 2px #777 solid;
+        padding-bottom: 20px;
+    }
+
+    .texte_fin {
+        align-items: center;
+    }
+
+    .titre_formulaire {
+        padding-right: 0;
+    }
+
+    .texte_debut, .texte_milieu, .texte_fin {
+        font-size: 20px;
+    }
+
+    .footer2 {
+        border-top: 2px #777 solid;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .logo_orleans {
+        width: 65px;
+    }
+
+    .footer3 a{
+        font-size: 15px;
+    }
+
+    .footer4 {
+        width: 95%;
+        height: 17%;;
+    }
+}
